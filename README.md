@@ -1,4 +1,4 @@
-## BMQuant - A FIJI Macro to Quantify Basement Membrane Protein Fluorescent Intensity in Kidney Organoids
+## BMQuant - A FIJI Macro to Quantify Basement Membrane Protein
 
 The basement membrane quantification (BMQuant) is a FIJI macro and a framework for basement membrane protein quantification in organoid models. 
 As we have developed an X-linked Alport syndrome (XLAS) kidney organoid models from male iPSCs. With developing this macro we aimed to quantify collagen a5(IV) mean intensity in the basement membranes of our model after antisense oligonucleotide treatment. 
