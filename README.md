@@ -4,9 +4,9 @@ BMQuant is a FIJI macro and a framework for basement membrane protein quantifica
 
 Three steps must have been taken to use this macro:
 
-- **Object Segmentation**: We use QuPath to annotate and segment our objects in which we want to perform the quantification (Gloms and tubules in our example). 
-- **Export annotations**: We export the region of interests (ROIs) using the provided script.
-- **Pixel classification**: iLastik software is used to perform pixel classification on the channel of interest using machine learning model inplemented in ilastik.
+- **Object Segmentation**: We use QuPath to annotate and segment our objects for which we want to perform the quantification (Gloms and tubules in our example). 
+- **Export annotations**: We export the region of interest (ROI) using the provided script.
+- **Pixel classification**: Ilastik software is used to perform pixel classification on the channel of interest using machine learning model implemented in ilastik.
 - **Measurement**: We used teh Fiji macro to measure the mean fluorscent intensity in the basement membrane and inside our objects with calculating the area
 
 As we have developed an X-linked Alport syndrome (XLAS) kidney organoid models from male iPSCs. With developing this macro we aimed to quantify collagen a5(IV) mean intensity in the basement membranes of our model after antisense oligonucleotide treatment. 
