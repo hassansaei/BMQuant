@@ -86,7 +86,7 @@ Nicolas Gaudin: nicolas.gaudin@inserm.fr & Hassan Saei: hassan.saeiahan@gmail.co
 
 ---
 
-## 🗨️ Citations
+## Citations
 
 If you used BMQuant in your project, please cite following papers:
 
