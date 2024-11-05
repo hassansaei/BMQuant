@@ -11,6 +11,12 @@ Three steps must have been taken to use this macro:
 
 As we have developed an X-linked Alport syndrome (XLAS) kidney organoid models from male iPSCs. With developing this macro we aimed to quantify collagen a5(IV) mean intensity in the basement membranes of our model after antisense oligonucleotide treatment. 
 
+## Usage
+
+### Getting Started
+
+- **Download QuPath software**: [Download QuPath](https://qupath.github.io/) for object annotation and ROI extraction (available for macOS, windows and linux OS)
+- **FiJi**: [Download FIJI](https://imagej.net/software/fiji/downloads) which is a powerfull and free image analysis tool
 ---
 
 This macro takes raw data in .czi format, regeans of interest (ROIs), and ilastk project file as input.
