@@ -17,6 +17,48 @@ As we have developed an X-linked Alport syndrome (XLAS) kidney organoid models f
 
 - **Install QuPath software**: [Download QuPath](https://qupath.github.io/) for object annotation and ROI extraction (available for macOS, windows and linux OS)
 
+In order to use segment analysis models (SAM) API (sam-api) for automated and much accurate border detection in your objects you should follow the following step:
+
+Create conda environment:
+```bash
+conda create -n samapi -y python=3.10
+conda activate samapi
+```
+If you're using a computer with CUDA-compatible GPU, install:
+
+```bash
+conda install -c conda-forge -y cudatoolkit=11.8
+```
+If you're using a computer with CUDA-compatible GPU on Windows, install torch with GPU-support with the following command.
+
+```bash
+python -m pip install "torch>=2.3.1,<2.4" torchvision --index-url https://download.pytorch.org/whl/cu118
+```
+Install samapi and its dependencies.
+
+```bash
+python -m pip install git+https://github.com/ksugar/samapi.git
+```
+If you are using WSL2, LD_LIBRARY_PATH will need to be updated as follows.
+
+```bash
+export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
+```
+Each time you started to workw with QuPath you lunch a server to use sam-api:
+
+```bash
+export PYTORCH_ENABLE_MPS_FALLBACK=1 # Required for running on Apple silicon
+uvicorn samapi.main:app --workers 2
+```
+
+The command will lunch a server at http://localhost:8000.
+```bash
+INFO:     Started server process [21258]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+```
+
 - **Install FIJI**: [Download FIJI](https://imagej.net/software/fiji/downloads) which is a powerful and free image analysis tool.
 - **Install iLastik software**: [Download iLastik](https://www.ilastik.org/download) for pixel classification
 
