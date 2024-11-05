@@ -40,8 +40,7 @@ For non-commercial use, this product is available for free.
 
 This macro is designed in collaboration with Nicolas Gaudin. For more information and help you can wite to:
 
-Nicolas Gaudin: nicolas.gaudin@inserm.fr
-Hassan Saei: hassan.saeiahan@gmail.com
+Nicolas Gaudin: nicolas.gaudin@inserm.fr & Hassan Saei: hassan.saeiahan@gmail.com
 
 ---
 
