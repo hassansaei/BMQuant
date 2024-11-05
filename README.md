@@ -38,6 +38,12 @@ For non-commercial use, this product is available for free.
 
 ## 🗨️ Contacts
 
+
+
+---
+
+## 🗨️ Citations
+
 If you used BMQuant in your project, please cite following papers:
 
 1. For QuPath: Bankhead, P., Loughrey, M.B., Fernández, J.A. et al. QuPath: Open source software for digital pathology image analysis. Sci Rep 7, 16878 (2017). https://doi.org/10.1038/s41598-017-17204-5 ref 
@@ -46,16 +52,6 @@ Ko Sugawara bioRxiv 2023.06.13.544786; doi: https://doi.org/10.1101/2023.06.13.5
 3. For SAM: Chaoning Zhang et al. Faster Segment Anything: Towards Lightweight SAM for Mobile Applications.
 4. For ilastik: Berg, S., Kutra, D., Kroeger, T. et al. ilastik: interactive machine learning for (bio)image analysis. Nat Methods 16, 1226–1232 (2019). https://doi.org/10.1038/s41592-019-0582-9
 5. For FIJI: Schindelin, J., Arganda-Carreras, I., Frise, E. et al. Fiji: an open-source platform for biological-image analysis. Nat Methods 9, 676–682 (2012). https://doi.org/10.1038/nmeth.2019
-
-
-
-
----
-
-## 🗨️ Citations
-
-
-
 
 
 ---
