@@ -15,12 +15,47 @@ As we have developed an X-linked Alport syndrome (XLAS) kidney organoid models f
 
 ### Getting Started
 
-- **Download QuPath software**: [Download QuPath](https://qupath.github.io/) for object annotation and ROI extraction (available for macOS, windows and linux OS)
-- **FiJi**: [Download FIJI](https://imagej.net/software/fiji/downloads) which is a powerfull and free image analysis tool
+- **Install QuPath software**: [Download QuPath](https://qupath.github.io/) for object annotation and ROI extraction (available for macOS, windows and linux OS)
+
+- **Install FIJI**: [Download FIJI](https://imagej.net/software/fiji/downloads) which is a powerful and free image analysis tool.
+- **Install iLastik software**: [Download iLastik](https://www.ilastik.org/download) for pixel classification
+
 ---
 
 This macro takes raw data in .czi format, regeans of interest (ROIs), and ilastk project file as input.
 We can assign the thickness of the border indicating the basement membranes in our objects (glomeruli or tubule). 
 It calculates border area and mean fluorscent intensity of the channel of interest and generate a csv file with the values for each object.
+
+---
+
+## 📃 License
+
+This pipeline is distributed under the MIT license. You can review the full license agreement at the license tab. 
+
+For non-commercial use, this product is available for free.
+
+---
+
+## 🗨️ Contacts
+
+If you used BMQuant in your project, please cite following papers:
+
+1. For QuPath: Bankhead, P., Loughrey, M.B., Fernández, J.A. et al. QuPath: Open source software for digital pathology image analysis. Sci Rep 7, 16878 (2017). https://doi.org/10.1038/s41598-017-17204-5 ref 
+2. For sam-api: Training deep learning models for cell image segmentation with sparse annotations
+Ko Sugawara bioRxiv 2023.06.13.544786; doi: https://doi.org/10.1101/2023.06.13.544786
+3. For SAM: Chaoning Zhang et al. Faster Segment Anything: Towards Lightweight SAM for Mobile Applications.
+4. For ilastik: Berg, S., Kutra, D., Kroeger, T. et al. ilastik: interactive machine learning for (bio)image analysis. Nat Methods 16, 1226–1232 (2019). https://doi.org/10.1038/s41592-019-0582-9
+5. For FIJI: Schindelin, J., Arganda-Carreras, I., Frise, E. et al. Fiji: an open-source platform for biological-image analysis. Nat Methods 9, 676–682 (2012). https://doi.org/10.1038/nmeth.2019
+
+
+
+
+---
+
+## 🗨️ Citations
+
+
+
+
 
 ---
