@@ -95,5 +95,3 @@ If you used BMQuant in your project, please cite the following papers:
 3. For SAM: Chaoning Zhang et al. Faster Segment Anything: Towards Lightweight SAM for Mobile Applications.
 4. For ilastik: Berg, S., Kutra, D., Kroeger, T. et al. ilastik: interactive machine learning for (bio)image analysis. Nat Methods 16, 1226–1232 (2019). https://doi.org/10.1038/s41592-019-0582-9
 5. For FIJI: Schindelin, J., Arganda-Carreras, I., Frise, E. et al. Fiji: an open-source platform for biological-image analysis. Nat Methods 9, 676–682 (2012). https://doi.org/10.1038/nmeth.2019
-
----
