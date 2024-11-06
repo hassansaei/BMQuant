@@ -4,12 +4,12 @@ BMQuant is a FIJI macro and a framework for basement membrane protein quantifica
 
 Three steps must have been taken to use this macro:
 
-- **Object Segmentation**: We use QuPath to annotate and segment our objects for which we want to perform the quantification (Gloms and tubules in our example). 
+- **Object Segmentation**: We use QuPath to annotate and segment the objects for which we want to perform the quantification (Gloms and tubules in our example). 
 - **Export annotations**: We export the region of interest (ROI) using the provided script.
-- **Pixel classification**: Ilastik software is used to perform pixel classification on the channel of interest using machine learning model implemented in ilastik.
-- **Measurement**: We used teh Fiji macro to measure the mean fluorscent intensity in the basement membrane and inside our objects with calculating the area
+- **Pixel classification**: Ilastik software is used to perform pixel classification on the channel of interest using a machine learning model implemented in ilastik.
+- **Measurement**: We used teh Fiji macro to measure the mean fluorescent intensity in the basement membrane and inside our objects by calculating the area
 
-As we have developed an X-linked Alport syndrome (XLAS) kidney organoid models from male iPSCs. With developing this macro we aimed to quantify collagen a5(IV) mean intensity in the basement membranes of our model after antisense oligonucleotide treatment. 
+As we have developed an X-linked Alport syndrome (XLAS) kidney organoid model from male iPSCs. With developing this macro we aimed to quantify collagen a5(IV) mean intensity in the basement membranes of our model after antisense oligonucleotide treatment. 
 
 ## Usage
 
@@ -17,7 +17,7 @@ As we have developed an X-linked Alport syndrome (XLAS) kidney organoid models f
 
 - **Install QuPath software**: [Download QuPath](https://qupath.github.io/) for object annotation and ROI extraction (available for macOS, windows and linux OS)
 
-In order to use segment analysis models (SAM) API (sam-api) for automated and much accurate border detection in your objects you should follow the following step:
+In order to use segment analysis models (SAM) API (sam-api) for automated and much more accurate border detection in your objects you should follow the following step:
 
 Create conda environment:
 ```bash
@@ -64,9 +64,9 @@ INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
 
 ---
 
-This macro takes raw data in .czi format, regeans of interest (ROIs), and ilastk project file as input.
+This macro takes raw data in .czi format, regions of interest (ROIs), and ilastk project file as input.
 We can assign the thickness of the border indicating the basement membranes in our objects (glomeruli or tubule). 
-It calculates border area and mean fluorscent intensity of the channel of interest and generate a csv file with the values for each object.
+It calculates the border area and means the fluorescent intensity of the channel of interest and generates a CSV file with the values for each object.
 
 ---
 
@@ -80,7 +80,7 @@ For non-commercial use, this product is available for free.
 
 ## 🗨️ Contacts
 
-This macro is designed in collaboration with Nicolas Gaudin. For more information and help you can wite to:
+This macro is designed in collaboration with Nicolas Gaudin. For more information and help you can write to:
 
 Nicolas Gaudin: nicolas.gaudin@inserm.fr & Hassan Saei: hassan.saeiahan@gmail.com
 
@@ -88,7 +88,7 @@ Nicolas Gaudin: nicolas.gaudin@inserm.fr & Hassan Saei: hassan.saeiahan@gmail.co
 
 ## Citations
 
-If you used BMQuant in your project, please cite following papers:
+If you used BMQuant in your project, please cite the following papers:
 
 1. For QuPath: Bankhead, P., Loughrey, M.B., Fernández, J.A. et al. QuPath: Open source software for digital pathology image analysis. Sci Rep 7, 16878 (2017). https://doi.org/10.1038/s41598-017-17204-5
 2. For sam-api: Training deep learning models for cell image segmentation with sparse annotations Ko Sugawara bioRxiv 2023.06.13.544786; doi: https://doi.org/10.1101/2023.06.13.544786
