@@ -18,6 +18,12 @@ We developed this macro to quantify collagen a5(IV) mean intensity in the baseme
 1. **Install QuPath Software**: [Download QuPath](https://qupath.github.io/) for object annotation and ROI extraction (available for macOS, Windows, and Linux OS).
 2. **Install FIJI**: [Download FIJI](https://imagej.net/software/fiji/downloads), a powerful and free image analysis tool.
 3. **Install Ilastik Software**: [Download Ilastik](https://www.ilastik.org/download) for pixel classification.
+4. **Create Conda Environment**:
+
+    ```bash
+    conda env create -f samapi_env.yml
+    conda activate samapi
+    ```
 
 ### Using SAM API for Automated Border Detection
 

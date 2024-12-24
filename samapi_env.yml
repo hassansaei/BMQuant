@@ -1,0 +1,11 @@
+name: samapi
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - cudatoolkit=11.8
+  - pip
+  - pip:
+      - torch>=2.3.1,<2.4
+      - torchvision
+      - git+https://github.com/ksugar/samapi.git
