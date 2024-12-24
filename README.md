@@ -1,97 +1,79 @@
-## BMQuant - A FIJI Macro to Quantify Basement Membrane Protein
+# BMQuant - A FIJI Macro to Quantify Basement Membrane Protein
 
-BMQuant is a FIJI macro and a framework for basement membrane protein quantification in organoid samples. 
+BMQuant is a FIJI macro and a framework for basement membrane protein quantification in organoid samples.
 
-Three steps must have been taken to use this macro:
+## Steps to Use This Macro
 
-- **Object Segmentation**: We use QuPath to annotate and segment the objects for which we want to perform the quantification (Gloms and tubules in our example). 
-- **Export annotations**: We export the region of interest (ROI) using the provided script.
-- **Pixel classification**: Ilastik software is used to perform pixel classification on the channel of interest using a machine learning model implemented in ilastik.
-- **Measurement**: We used teh Fiji macro to measure the mean fluorescent intensity in the basement membrane and inside our objects by calculating the area
+1. **Object Segmentation**: Use QuPath to annotate and segment the objects for quantification (e.g., Gloms and tubules).
+2. **Export Annotations**: Export the region of interest (ROI) using the provided script.
+3. **Pixel Classification**: Use Ilastik software to perform pixel classification on the channel of interest with a machine learning model.
+4. **Measurement**: Use the Fiji macro to measure the mean fluorescent intensity in the basement membrane and inside the objects by calculating the area.
 
-As we have developed an X-linked Alport syndrome (XLAS) kidney organoid model from male iPSCs. With developing this macro we aimed to quantify collagen a5(IV) mean intensity in the basement membranes of our model after antisense oligonucleotide treatment. 
+We developed this macro to quantify collagen a5(IV) mean intensity in the basement membranes of our X-linked Alport syndrome (XLAS) kidney organoid model from male iPSCs after antisense oligonucleotide treatment.
 
 ## Usage
 
 ### Getting Started
 
-- **Install QuPath software**: [Download QuPath](https://qupath.github.io/) for object annotation and ROI extraction (available for macOS, windows and linux OS)
+1. **Install QuPath Software**: [Download QuPath](https://qupath.github.io/) for object annotation and ROI extraction (available for macOS, Windows, and Linux OS).
+2. **Install FIJI**: [Download FIJI](https://imagej.net/software/fiji/downloads), a powerful and free image analysis tool.
+3. **Install Ilastik Software**: [Download Ilastik](https://www.ilastik.org/download) for pixel classification.
 
-In order to use segment analysis models (SAM) API (sam-api) for automated and much more accurate border detection in your objects you should follow the following step:
+### Using SAM API for Automated Border Detection
 
-Create conda environment:
-```bash
-conda create -n samapi -y python=3.10
-conda activate samapi
-```
-If you're using a computer with CUDA-compatible GPU, install:
+1. **Create Conda Environment**:
+    ```bash
+    conda create -n samapi -y python=3.10
+    conda activate samapi
+    ```
 
-```bash
-conda install -c conda-forge -y cudatoolkit=11.8
-```
-If you're using a computer with CUDA-compatible GPU on Windows, install torch with GPU-support with the following command.
+2. **Install CUDA Toolkit (if using a CUDA-compatible GPU)**:
+    ```bash
+    conda install -c conda-forge -y cudatoolkit=11.8
+    ```
 
-```bash
-python -m pip install "torch>=2.3.1,<2.4" torchvision --index-url https://download.pytorch.org/whl/cu118
-```
-Install samapi and its dependencies.
+3. **Install Torch with GPU Support (if using a CUDA-compatible GPU on Windows)**:
+    ```bash
+    python -m pip install "torch>=2.3.1,<2.4" torchvision --index-url https://download.pytorch.org/whl/cu118
+    ```
 
-```bash
-python -m pip install git+https://github.com/ksugar/samapi.git
-```
-If you are using WSL2, LD_LIBRARY_PATH will need to be updated as follows.
+4. **Install SAM API and Dependencies**:
+    ```bash
+    python -m pip install git+https://github.com/ksugar/samapi.git
+    ```
 
-```bash
-export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
-```
-Each time you started to workw with QuPath you lunch a server to use sam-api:
+5. **Update `LD_LIBRARY_PATH` (if using WSL2)**:
+    ```bash
+    export LD_LIBRARY_PATH=/usr/lib/wsl/lib:$LD_LIBRARY_PATH
+    ```
 
-```bash
-export PYTORCH_ENABLE_MPS_FALLBACK=1 # Required for running on Apple silicon
-uvicorn samapi.main:app --workers 2
-```
+6. **Start the SAM API Server**:
+    ```bash
+    export PYTORCH_ENABLE_MPS_FALLBACK=1 # Required for running on Apple silicon
+    uvicorn samapi.main:app --workers 2
+    ```
 
-The command will lunch a server at http://localhost:8000.
-```bash
-INFO:     Started server process [21258]
-INFO:     Waiting for application startup.
-INFO:     Application startup complete.
-INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
-```
+    The command will launch a server at [http://localhost:8000](http://localhost:8000).
+    ```bash
+    INFO:     Started server process [21258]
+    INFO:     Waiting for application startup.
+    INFO:     Application startup complete.
+    INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+    ```
 
-- **Install FIJI**: [Download FIJI](https://imagej.net/software/fiji/downloads) which is a powerful and free image analysis tool.
-- **Install iLastik software**: [Download iLastik](https://www.ilastik.org/download) for pixel classification
+## License
 
----
-
-This macro takes raw data in .czi format, regions of interest (ROIs), and ilastk project file as input.
-We can assign the thickness of the border indicating the basement membranes in our objects (glomeruli or tubule). 
-It calculates the border area and means the fluorescent intensity of the channel of interest and generates a CSV file with the values for each object.
-
----
-
-## 📃 License
-
-This pipeline is distributed under the MIT license. You can review the full license agreement at the license tab. 
+This pipeline is distributed under the MIT license. You can review the full license agreement in the license tab.
 
 For non-commercial use, this product is available for free.
 
----
+## Contacts
 
-## 🗨️ Contacts
+This macro is designed in collaboration with Nicolas Gaudin. For more information and help, you can write to:
 
-This macro is designed in collaboration with Nicolas Gaudin. For more information and help you can write to:
-
-Nicolas Gaudin: nicolas.gaudin@inserm.fr & Hassan Saei: hassan.saeiahan@gmail.com
-
----
+- Nicolas Gaudin: nicolas.gaudin@inserm.fr
+- Hassan Saei: hassan.saeiahan@gmail.com
 
 ## Citations
 
-If you used BMQuant in your project, please cite the following papers:
-
-1. For QuPath: Bankhead, P., Loughrey, M.B., Fernández, J.A. et al. QuPath: Open source software for digital pathology image analysis. Sci Rep 7, 16878 (2017). https://doi.org/10.1038/s41598-017-17204-5
-2. For sam-api: Training deep learning models for cell image segmentation with sparse annotations Ko Sugawara bioRxiv 2023.06.13.544786; doi: https://doi.org/10.1101/2023.06.13.544786
-3. For SAM: Chaoning Zhang et al. Faster Segment Anything: Towards Lightweight SAM for Mobile Applications.
-4. For ilastik: Berg, S., Kutra, D., Kroeger, T. et al. ilastik: interactive machine learning for (bio)image analysis. Nat Methods 16, 1226–1232 (2019). https://doi.org/10.1038/s41592-019-0582-9
-5. For FIJI: Schindelin, J., Arganda-Carreras, I., Frise, E. et al. Fiji: an open-source platform for biological-image analysis. Nat Methods 9, 676–682 (2012). https://doi.org/10.1038/nmeth.2019
+(Include any relevant citations here)
